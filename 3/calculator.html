@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>计算器实例</title>
+</head>
+
+<body>
+    <header class="top-header">
+        <p>
+            /* 计算器程序制作思路：先声明两个全局变量数组 arryresule[]与arrylog[]分别 用于存储输入的数据与运算符，当输入‘+’、‘-’、‘*’、‘/’时判断输入数据的个数是否大于三个， 如果大于三个则前两个值运算并将结果直接显示出来，若输入操作符为三角函数则直接进行运算， 当点击“=”时，取得最终运算值。getvalue(a)为取到输入值函数，当点击数字按钮时执行， 并进行输入数值的判断当输入值为小数时，若含有多余‘.’则只保留第一个如数的'.', 若输入数字前面有多个无效0的话自动清除多余的无效0。*/
+        </p>
+        <p>
+            getlogical(log)为取得运算符数组函数，当点击运算符时讲运算符存储至arrylog[]数组中。
+        </p>
+        <p>
+            triangle(x)取得三角函数操作符使用case判断直接进行运算。
+        </p>
+        <p>
+            clearvalue()为AC按键功能，当点击时清楚所有数据并置0。
+        </p>
+        <p>
+            clearonlyvalue()用于字符操作清零，但不清除数值存储数组arryresule中的内容。
+        </p>
+        <p>
+            clearvalue0()用于最后结果显示并清除存储的数据与字符串数组内容，释放多余内存。
+        </p>
+        <p>
+            showresult()取得arryresule[]与arrylogz中的内容进行最终运算
+        </p>
+        <p>不足：1.没有判断运算符的优先级，例如1+2*3会从左至右计算。</p>
+        <p>2.使用全局变量存储数据，这样很容易使全局变量被污染（函数含参没有想到更好的取值方法）</p>
+        <p>3.输出数据未优化，比如sin0、sin90°、sin30°及一些小数未处理</p>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row" id="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <input type="text" class="col-md-4 col-sm-4 inpt-0" id="outer" value="0" readonly="readonly" size="15">
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <div class="col-md-1 col-sm-1 col-sm-1 btn btn-warning num" onclick="getvalue(0)">1</div>
+                <div class="col-md-1 col-sm-1 col-sm-1 btn btn-warning num" onclick="getvalue(1)">2</div>
+                <div class="col-md-1 col-sm-1 col-sm-1 btn btn-warning num" onclick="getvalue(2)">3</div>
+                <div class="col-md-1 col-sm-1 col-sm-1 btn btn-warning log" onclick="getlogical(0)">+</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(3)">4</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(4)">5</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(5)">6</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning log" onclick="getlogical(1)">-</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(6)">7</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(7)">8</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(8)">9</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning log" onclick="getlogical(2)">*</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <div class="col-md-1 col-sm-1 btn btn-warning" onclick="clearvalue()">AC</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning triangle" onclick="triangle(0)">sin(x)</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning triangle" onclick="triangle(1)">cos(x)</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning log" onclick="getlogical(3)">/</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-sm-4"></div>
+                <div class="col-md-2 col-sm-2 btn btn-warning num" onclick="getvalue(9)">0</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning num" onclick="getvalue(10)">.</div>
+                <div class="col-md-1 col-sm-1 btn btn-warning" onclick="showresult()">=</div>
+            </div>
+        </div>
+        <script src='js/my.js'>
+        </script>
+    </article>
+</body>
+
+</html>
