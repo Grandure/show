@@ -1,0 +1,12 @@
+body{
+	padding:10px;
+}
+.del{
+	text-decoration: underline;
+	cursor:pointer;
+	font-size:12px;
+	color:orange;
+}
+h1{
+	text-align: center;
+}
