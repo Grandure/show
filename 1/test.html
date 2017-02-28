@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>input file样式修改</title>
+</head>
+<style>
+    .btns {
+    position: relative
+}
+
+.btns input {
+    width: 185px;
+    height:43px
+}
+
+.btns .btn_file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border: 0 none;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.btns input {
+    opacity: 1;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #cacbcc;
+}
+
+.btns .bg{
+	width:18px;
+	height:18px;
+    display:block;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/soutu_icons_sample_6a1e1619.png) no-repeat;
+    position:relative;
+	top:-31px;
+	left:20px;
+}
+.btns .btn-use{
+	padding-left:18px;
+	font-size:18px;
+}
+.btns #pic{
+	background-position:-144px 0;
+}
+</style>
+
+<body>
+    <div class="btns">
+        <input type="file" class="btn_file" size="5" id="input_file">
+        <label for="input_file">
+            <input type="button" value="本地上传图片" class="btn-use">
+        </label>
+        <span class="bg" id="pic"></span>
+    </div>
+    
+</body>
+
+</html>

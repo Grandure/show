@@ -1,0 +1,23 @@
+.object{
+	width:600px;
+	margin:auto;
+	text-align: center;
+}
+th,#biaotou{
+	background:#a5d0ec;
+}
+tbody{	
+	color:red;
+	}
+	tfoot{
+		color:green;
+	}
+tr{
+}
+td{
+	border:ridge 2px #a5d0ec;
+}
+caption{
+	position:relative;
+	padding:20px 0 10px 0;
+}
